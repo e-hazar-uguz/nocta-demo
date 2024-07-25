@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+div.dt-container div.dt-search input {
+  margin-bottom:10px!important
+}

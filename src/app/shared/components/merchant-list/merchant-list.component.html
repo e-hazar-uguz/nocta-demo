@@ -1,0 +1,33 @@
+<div class="container-fluid card">
+  <div class="mt-2">
+    <div class="d-flex justify-content-between">
+      <h1 style="font-size: 22px; line-height: 44px; font-weight: bold;">{{title}}</h1>
+      <button type="button" class="btn btn-info mx-3 mt-2" (click)="logout()">Log Out</button>
+    </div>
+  </div>
+
+  <div class="mt-2 mb-2" style="padding: 1rem;">
+    <table id="merchant_id" class="table table-bordered table-hover table-striped"
+      datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+      <thead>
+        <tr>
+        <th scope="col" class="text-center">ID</th>
+        <th scope="col" class="text-center">Merchant Name</th>
+        <th scope="col" class="text-center">Merchant MCC</th>
+        <th scope="col" class="text-center">Transaction Amount</th>
+        <th scope="col" class="text-center">Transaction Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of merchantList" (click)="onRowClick(data.id)">
+          <td  class="text-center">{{data.id}}</td>
+          <td  class="text-center">{{data.merchantName}}</td>
+          <td  class="text-center">{{data.merchantMCC}}</td>
+          <td  class="text-center">{{data.transactionAmount}}</td>
+          <td  class="text-center">{{data.formattedDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <canvas id="myPieChart"></canvas>
+</div>

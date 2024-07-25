@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="auth-page">
+    <div class="container page">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 col-xs-12">
+          <form [formGroup]="formValue">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label" style="color:aliceblue">UserName</label>
+              <input type="password" class="form-control" formControlName="username" id="username">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label" style="color:aliceblue">Password</label>
+              <input type="password" class="form-control" formControlName="password" id="password">
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+              <button type="submit" class="btn" (click)="login()"
+                style="color:whitesmoke;background-color:rgb(29, 194, 144);"  [disabled]="!formValue.valid">
+                Login</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
